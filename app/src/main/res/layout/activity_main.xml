@@ -72,58 +72,62 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/roll"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/hold"
         app:layout_constraintEnd_toStartOf="@+id/guideline_rightLogo"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/guideline_leftLogo"
-        app:layout_constraintTop_toBottomOf="@+id/txt_player2" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_player2"
+        app:layout_constraintVertical_bias="0.801" />
 
     <TextView
         android:id="@+id/txt_player1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="18dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:textSize="25sp"
         android:text="@string/init_score"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/txt_player2"
         app:layout_constraintHorizontal_bias="0.319"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.726"
+        app:layout_constraintVertical_bias="0.656"
         tools:text="0" />
 
     <TextView
         android:id="@+id/txt_player2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="182dp"
-        android:layout_marginTop="388dp"
+        android:layout_marginTop="8dp"
         android:text="@string/init_score"
         android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txt_player1"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.655" />
 
     <TextView
         android:id="@+id/temp_player1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="56dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/init_score"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/roll"
         app:layout_constraintEnd_toStartOf="@+id/temp_player2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_player1"
-        app:layout_constraintVertical_bias="0.857" />
+        app:layout_constraintStart_toStartOf="@+id/guideline_leftLogo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/temp_player2"
@@ -131,26 +135,26 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="92dp"
+        android:layout_marginStart="56dp"
         android:layout_marginTop="8dp"
         android:text="@string/init_score"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/roll"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_rightLogo"
         app:layout_constraintStart_toEndOf="@+id/temp_player1"
-        app:layout_constraintTop_toBottomOf="@+id/txt_player2"
-        app:layout_constraintVertical_bias="0.836" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/hold"
         style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:text="@string/hold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline_rightLogo"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/guideline_leftLogo" />
 </android.support.constraint.ConstraintLayout>

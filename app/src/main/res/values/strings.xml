@@ -3,4 +3,6 @@
     <string name="roll">Roll</string>
     <string name="init_score">0</string>
     <string name="hold">Hold</string>
+    <string name="player1To2">Player 2\'s turn</string>
+    <string name="player2To1">Player 1\'s turn</string>
 </resources>

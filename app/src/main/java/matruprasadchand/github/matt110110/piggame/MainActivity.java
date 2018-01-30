@@ -1,5 +1,7 @@
 package matruprasadchand.github.matt110110.piggame;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,20 +45,13 @@ public class MainActivity extends AppCompatActivity {
         rollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Log.d("pig", "The button has been pressed.");
-//                Random randomNuGenerator = new Random();
-//                int num = randomNuGenerator.nextInt(6);
-//                Log.d("pig", "Random number is: " + num );
-//                mImageViewPlayer1.setImageResource(diceImage[num]);
-//                num = randomNuGenerator.nextInt(6);
-//                mImageViewPlayer2.setImageResource(diceImage[num]);
                 Random dice_roll = new Random();
                 int output = dice_roll.nextInt(6);
                 if (activePlayer == 1) {
                     mImageViewPlayer1.setImageResource(diceImage[output]);
                     if (output == 5) {
                         mTextViewTemp1.setText(R.string.init_score);
-                        Toast.makeText(getApplicationContext(), "Player 2's turn", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), R.string.player1To2, Toast.LENGTH_SHORT).show();
                         activePlayer = 2;
                     }
                     else {
@@ -69,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                     mImageViewPlayer2.setImageResource(diceImage[output]);
                     if (output == 5) {
                         mTextViewTemp2.setText(R.string.init_score);
-                        Toast.makeText(getApplicationContext(), "Player 1's turn", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), R.string.player2To1, Toast.LENGTH_SHORT).show();
                         activePlayer = 1;
                     }
                     else {
@@ -84,22 +79,50 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (activePlayer == 1) {
+                    Toast.makeText(getApplicationContext(), R.string.player1To2 , Toast.LENGTH_SHORT).show();
                     int temp_score = Integer.parseInt(mTextViewTemp1.getText().toString());
                     int perma_score = Integer.parseInt(mTextViewPlayer1.getText().toString());
                     perma_score += temp_score;
+                    perma_score = updateScore(perma_score);
                     mTextViewPlayer1.setText(Integer.toString(perma_score));
                     mTextViewTemp1.setText(R.string.init_score);
-                    activePlayer = 2;
                 }
                 else {
+                    Toast.makeText(getApplicationContext(), R.string.player2To1, Toast.LENGTH_SHORT).show();
                     int temp_score = Integer.parseInt(mTextViewTemp2.getText().toString());
                     int perma_score = Integer.parseInt(mTextViewPlayer2.getText().toString());
                     perma_score += temp_score;
+                    perma_score = updateScore(perma_score);
                     mTextViewPlayer2.setText(Integer.toString(perma_score));
                     mTextViewTemp2.setText(R.string.init_score);
-                    activePlayer = 1;
+
                 }
             }
         });
+    }
+
+    private int updateScore(int perma_score) {
+        if (perma_score >= 100) {
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.setTitle("Game Over");
+            alert.setCancelable(false);
+            alert.setMessage("Player 1 won the game!");
+            alert.setPositiveButton("Close Application", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    finish();
+                }
+            });
+            alert.show();
+        }
+        else {
+            if (activePlayer == 1) {
+                activePlayer = 2;
+            }
+            else  {
+                activePlayer = 1;
+            }
+        }
+        return perma_score;
     }
 }
