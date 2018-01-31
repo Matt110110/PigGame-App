@@ -6,6 +6,8 @@
     <string name="player1To2">Player 2\'s turn</string>
     <string name="player2To1">Player 1\'s turn</string>
 
+    <string name="global">Global Scores</string>
+    <string name="local">Local Scores</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="nameOfTheGame">Pig Game</string>
     <string name="btn_play">PLAY</string>

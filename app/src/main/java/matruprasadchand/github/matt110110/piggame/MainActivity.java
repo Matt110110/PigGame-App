@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     Button holdButton;
     TextView mTextViewTemp1;
     TextView mTextViewTemp2;
-    int activePlayer;
+    int activePlayer = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             activePlayer = savedInstanceState.getInt("activePlayer");
             mTextViewPlayer1.setText(savedInstanceState.getString("GlobalScore_Player1"));
-            mTextViewPlayer2.setText(savedInstanceState.getString("GlobalScore_Player2"));
+            mTextViewPlayer2.setText(savedInstanceState.getString("GlobalScore_Player"));
         } else {
             activePlayer = 1;
         }
