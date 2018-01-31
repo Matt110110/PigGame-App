@@ -2,14 +2,13 @@
 The Android app version of the PigGame javascript project
 
 ## TODO : 
-1. ~~Icon pack~~
-2. More backgrounds. The current one sucks.
-3. Use of AlertDialog instead of Toast messages. Toasts are good and all but are not legible.
-4. ~~Design of the splash screen.~~
+1. More backgrounds. The current one sucks.
+2. Use of AlertDialog instead of Toast messages. Toasts are good and all but are not legible.
+3. Making a better layout. 
 
 ## DONE :
 + Logic of the game is complete and functional
 + Layout is more or less fixed. Some additional TextFields are needed
 
-## Bug :
-The cache is cleared once the app stops being in focus. This is a but I am planning to fix as soon as possible.
++ Back button kills the app
++ Cache clearing issue fixed.

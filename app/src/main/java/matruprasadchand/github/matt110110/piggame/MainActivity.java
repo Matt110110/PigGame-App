@@ -26,12 +26,13 @@ public class MainActivity extends AppCompatActivity {
     Button holdButton;
     TextView mTextViewTemp1;
     TextView mTextViewTemp2;
-    int activePlayer = 1;
+    int activePlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         mTextViewPlayer1 = findViewById(R.id.txt_player1);
         mTextViewPlayer2 = findViewById(R.id.txt_player2);
         mImageViewPlayer2 = findViewById(R.id.player2);
@@ -40,6 +41,15 @@ public class MainActivity extends AppCompatActivity {
         mTextViewTemp2 = findViewById(R.id.temp_player2);
         rollButton = findViewById(R.id.roll);
         holdButton = findViewById(R.id.hold);
+
+        if (savedInstanceState != null) {
+            activePlayer = savedInstanceState.getInt("activePlayer");
+            mTextViewPlayer1.setText(savedInstanceState.getString("GlobalScore_Player1"));
+            mTextViewPlayer2.setText(savedInstanceState.getString("GlobalScore_Player2"));
+        } else {
+            activePlayer = 1;
+        }
+
         final int[] diceImage = {R.drawable.dice1, R.drawable.dice2, R.drawable.dice3, R.drawable.dice4,
                 R.drawable.dice5, R.drawable.dice6};
         rollButton.setOnClickListener(new View.OnClickListener() {
@@ -124,5 +134,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         return perma_score;
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("activePlayer", activePlayer);
+        outState.putString("GlobalScore_Player1", mTextViewPlayer1.getText().toString());
+        outState.putString("GlobalScore_Player2", mTextViewPlayer2.getText().toString());
     }
 }
