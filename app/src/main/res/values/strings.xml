@@ -13,7 +13,7 @@
     <string name="btn_play">PLAY</string>
     <string name="rules">Rules:</string>
     <string name="rule01">1. The game has 2 players, playing in rounds</string>
-    <string name="rule02">2. In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score. But, if the player rolls a 6, all his ROUND score gets lost. After that, it\'s the next player\'s turn.</string>
+    <string name="rule02">2. In each turn, a player rolls a dice as many times as he wishes. Each result get added to his ROUND score. But, if the player rolls a 6, all his ROUND score gets lost. After that, it\'s the next player\'s turn.</string>
     <string name="rule03">3. The player can choose to \'Hold\', which means that his ROUND score gets added to his GLOBAL score. After that, it\'s the next player\'s turn.</string>
     <string name="rule04">4. The first player to reach 100 points on GLOBAL score wins the game.</string>
 </resources>
